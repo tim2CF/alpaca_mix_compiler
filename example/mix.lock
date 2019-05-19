@@ -1,3 +1,6 @@
-%{"alpaca": {:git, "https://github.com/alpaca-lang/alpaca", "106b99622aa94abaabfd33ed0a3aa0033925a4f9", [branch: "master"]},
-  "alpaca_compiler": {:git, "https://github.com/lepoetemaudit/alpaca_mix_compiler", "8e88e367bcf26bf94ef46ede230d518f2a705b6e", [branch: "master"]},
-  "epo_runtime": {:git, "git://github.com/brigadier/epo_runtime.git", "c403f40237abc93fedfbbed6462f77121bf14be9", [tag: "0.3"]}}
+%{
+  "alpaca": {:git, "https://github.com/alpaca-lang/alpaca", "aa2bb5594dda8292ca0bffb8e8a6ebc0f60e8dbc", [branch: "master"]},
+  "alpaca_compiler": {:git, "https://github.com/lepoetemaudit/alpaca_mix_compiler", "cb855cc08dcc91d72febfc270fdfcef52c8f6ec1", [branch: "master"]},
+  "cf": {:hex, :cf, "0.3.1", "5cb902239476e141ea70a740340233782d363a31eea8ad37049561542e6cd641", [:rebar3], [], "hexpm"},
+  "epo_runtime": {:git, "git://github.com/brigadier/epo_runtime.git", "c403f40237abc93fedfbbed6462f77121bf14be9", [tag: "0.3"]},
+}

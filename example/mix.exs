@@ -2,13 +2,15 @@ defmodule AlpacaExample.Mixfile do
   use Mix.Project
 
   def project do
-    [app: :alpaca_example,
-     version: "0.1.0",
-     elixir: "~> 1.3",
-     build_embedded: Mix.env == :prod,
-     start_permanent: Mix.env == :prod,
-     compilers: Mix.compilers ++ [:alpaca],
-     deps: deps()]
+    [
+      app: :alpaca_example,
+      version: "0.1.0",
+      elixir: "~> 1.3",
+      build_embedded: Mix.env() == :prod,
+      start_permanent: Mix.env() == :prod,
+      compilers: Mix.compilers() ++ [:alpaca],
+      deps: deps()
+    ]
   end
 
   # Configuration for the OTP application
@@ -28,6 +30,6 @@ defmodule AlpacaExample.Mixfile do
   #
   # Type "mix help deps" for more examples and options
   defp deps do
-    [{:alpaca_compiler, git: "https://github.com/lepoetemaudit/alpaca_mix_compiler", branch: "master"}]
+    [{:alpaca_compiler, path: ".."}]
   end
 end
