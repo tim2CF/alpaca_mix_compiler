@@ -1,13 +1,18 @@
 module example
+export add, div, io_ffi
 
-export add
-export round_trip
+type maybe 'a = Just 'a | Nothing
 
--- Simple add function
+-- simple function
 let add x y = x + y
+-- use generic ADT
+let div x y =
+  match y with
+    | 0 -> Nothing
+    | _ -> Just x / y
 
--- Call elixir - round trip
-let round_trip () =
-  beam :"Elixir.IO" :puts ["Hello Elixir! Love, Alpaca"] with
-    :ok -> :ok
-
+-- FFI example
+val io_ffi : fn string -> ()
+let io_ffi str =
+  beam :"Elixir.IO" :puts [str] with
+    :ok -> ()

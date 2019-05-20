@@ -12,7 +12,7 @@ defmodule Mix.Tasks.Compile.Alpaca do
   @doc """
   Runs this task.
   """
-  def run(args) do
+  def run(_) do
     project = Mix.Project.config()
 
     source_paths =
@@ -30,12 +30,12 @@ defmodule Mix.Tasks.Compile.Alpaca do
 
   defp do_run([], _, _), do: :noop
 
-  defp do_run(files, project, source_paths) do
+  defp do_run(files, _, _) do
     IO.puts("== Compiling #{length(files)} Alpaca source files")
 
     case :alpaca.compile({:files, Enum.map(files, &String.to_charlist/1)}) do
       {:ok, compiled} ->
-        for {:compiled_module, name, filename, bin} <- compiled do
+        for {:compiled_module, _, filename, bin} <- compiled do
           File.write!(Path.join(Mix.Project.compile_path(), filename), bin)
         end
 
